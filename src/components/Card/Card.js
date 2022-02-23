@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { FaStar } from "react-icons/fa";
 
 const CardContainer = styled.div`
 display: inline-block;
@@ -12,17 +13,25 @@ display: inline-block;
   
 `
 const Wrapper = styled.div`
-overflow-wrap: break-word;
+
+display: flex;
+  flex-direction: column;
+
 
 
 `
 const ProjectName = styled.h2`
+flex: 1;
 text-align: center;
 `
 const ProjectLink = styled.a`
+overflow-wrap: break-word;
 padding: 10px;
 `
-
+const RatingView = styled.span`
+flex: 1;
+margin: 20px;
+`
 
 const Card = ({ name, url, rating }) => {
   return (
@@ -30,7 +39,7 @@ const Card = ({ name, url, rating }) => {
         <Wrapper>
       <ProjectName>{name}</ProjectName>
       <ProjectLink>{url}</ProjectLink>
-      <span>{rating}</span>
+      <RatingView><FaStar/>{rating}</RatingView>
       </Wrapper>
     </CardContainer>
   );
